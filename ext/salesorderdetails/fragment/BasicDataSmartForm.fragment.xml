@@ -1,0 +1,95 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<smartForm:SmartForm editable="true" entityType="SlsDocReadReqType" id="headerSODataBasicDataSmartForm">
+		<smartForm:layout>
+			<smartForm:Layout singleGroupFullSize="true" labelSpanXL="2" labelSpanL="2" labelSpanM="2" emptySpanXL="1" emptySpanL="1"/>
+		</smartForm:layout>
+		<smartForm:Group>
+			<smartForm:GroupElement label="{i18n>orderReason}" useHorizontalLayout="true" binding="{stateModel>/basicData/orderReason}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="orderReasonLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_SDDocumentReason'},{path: 'dataModel>/readOnlyData/SDDocumentReason'}, {path: 'dataModel>/readOnlyData/SDDocumentReasonText'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="orderReasonLbl" text="{i18n>orderReason}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_SDDocumentReason}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<smartField:SmartField fieldGroupIds="headerSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{SDDocumentReason}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>salesOffice}" useHorizontalLayout="true" binding="{stateModel>/basicData/salesOffice}">
+				<m:FlexBox renderType="Bare">
+					<!--<m:HBox>-->
+					<m:Input editable="false" ariaLabelledBy="salesOfficeLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_SalesOffice'}, {path: 'dataModel>/readOnlyData/SalesOffice'}, {path: 'dataModel>/readOnlyData/SalesOfficeName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+					<core:InvisibleText id="salesOfficeLbl" text="{i18n>salesOffice}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_SalesOffice}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="headerSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{SalesOffice}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.DeleteCurrentValue" type="XML"/>
+					<!--</m:HBox>-->
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>salesGroup}" useHorizontalLayout="true" binding="{stateModel>/basicData/salesGroup}">
+				<m:FlexBox renderType="Bare">
+					<!--<m:HBox>-->
+					<m:Input editable="false" ariaLabelledBy="salesGroupLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_SalesGroup'},{path: 'dataModel>/readOnlyData/SalesGroup'}, {path: 'dataModel>/readOnlyData/SalesGroupName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+					<core:InvisibleText id="salesGroupLbl" text="{i18n>salesGroup}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_SalesGroup}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="headerSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{SalesGroup}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.DeleteCurrentValue" type="XML"/>
+					<!--</m:HBox>-->
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>salesDistrict}" useHorizontalLayout="true" binding="{stateModel>/basicData/salesDistrict}">
+				<m:FlexBox renderType="Bare">
+					<!--<m:HBox>-->
+					<m:Input editable="false" ariaLabelledBy="salesDistrictLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_SalesDistrict'},{path: 'dataModel>/readOnlyData/SalesDistrict'}, {path: 'dataModel>/readOnlyData/SalesDistrictName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+					<core:InvisibleText id="salesDistrictLbl" text="{i18n>salesDistrict}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_SalesDistrict}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="headerSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{SalesDistrict}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderdetails.fragment.DeleteCurrentValue" type="XML"/>
+					<!--</m:HBox>-->
+				</m:FlexBox>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

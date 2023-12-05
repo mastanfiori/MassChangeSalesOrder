@@ -1,0 +1,129 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<smartForm:SmartForm editable="true" entityType="SlsDocReadReqType" id="ShippingSmartForm">
+		<smartForm:layout>
+			<smartForm:Layout singleGroupFullSize="true" labelSpanXL="2" labelSpanL="2" labelSpanM="2" emptySpanXL="1" emptySpanL="1"/>
+		</smartForm:layout>
+		<smartForm:Group>
+			<smartForm:GroupElement label="{i18n>deliveryPriority}" useHorizontalLayout="true" binding="{stateModel>/shipping/deliveryPriority}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="deliveryPriorityLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_DeliveryPriority'},{path: 'dataModel>/readOnlyData/DeliveryPriority'}, {path: 'dataModel>/readOnlyData/DeliveryPriorityDesc'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+							<core:InvisibleText id="deliveryPriorityLbl" text="{i18n>deliveryPriority}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+						tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_DeliveryPriority}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{DeliveryPriority}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>storageLocation}" useHorizontalLayout="true" binding="{stateModel>/shipping/storageLocation}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="storageLocationLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_StorageLocation'},{path: 'dataModel>/readOnlyData/StorageLocation'}, {path: 'dataModel>/readOnlyData/StorageLocationName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+							<core:InvisibleText id="storageLocationLbl" text="{i18n>storageLocation}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+						 tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_StorageLocation}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{StorageLocation}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>shippingPlant}" useHorizontalLayout="true" binding="{stateModel>/shipping/shippingPlant}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="shippingPlantLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_Plant'},{path: 'dataModel>/readOnlyData/Plant'}, {path: 'dataModel>/readOnlyData/PlantName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="shippingPlantLbl" text="{i18n>shippingPlant}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+								tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_Plant}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{Plant}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>shippingPoint}" useHorizontalLayout="true" binding="{stateModel>/shipping/shippingPoint}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="shippingPointLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_ShippingPoint'},{path: 'dataModel>/readOnlyData/ShippingPoint'}, {path: 'dataModel>/readOnlyData/ShippingPointName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="shippingPointLbl" text="{i18n>shippingPoint}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_ShippingPoint}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{ShippingPoint}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>shippingType}" useHorizontalLayout="true" binding="{stateModel>/shipping/shippingType}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="shippingTypeLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_ShippingType'},{path: 'dataModel>/readOnlyData/ShippingType'}, {path: 'dataModel>/readOnlyData/ShippingTypeName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="shippingTypeLbl" text="{i18n>shippingType}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+								tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_ShippingType}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{ShippingType}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>route}" useHorizontalLayout="true" binding="{stateModel>/shipping/route}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="routeLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_Route'},{path: 'dataModel>/readOnlyData/Route'}, {path: 'dataModel>/readOnlyData/RouteName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="routeLbl" text="{i18n>route}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_Route}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{Route}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

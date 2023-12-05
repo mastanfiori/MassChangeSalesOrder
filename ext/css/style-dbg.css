@@ -1,0 +1,15 @@
+/* Enter your custom styles here */
+/* Enter your custom styles here */
+.comboStyle {
+    max-width: 100%;
+    padding-left: inherit;
+}
+
+.BorderTextClass {
+    border: 1px solid black;
+}
+
+
+.smartFiledObjectPage {
+    width: 20rem !important;
+}

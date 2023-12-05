@@ -1,0 +1,76 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:core="sap.ui.core" height="100%"
+	controllerName="cus.sd.so.mccs1.ext.salesorderitemdetails.controller.SalesOrderItemDetails">
+	<ObjectPageLayout showFooter="true" id="SalesOrderItemDetailsID" upperCaseAnchorBar="false" useIconTabBar="true" visible="true">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{i18n>itemHeading}" wrapping="false"/>
+				</expandedHeading>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<sections>
+			<ObjectPageSection title="{i18n>basicData}" showTitle="true" id="soItemBasicDataObjPgSctn">
+				<subSections>
+					<ObjectPageSubSection >
+						<blocks>
+							<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.BasicDataSmartForm" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection showTitle="true" title="{i18n>dateHeading}">
+				<subSections>
+					<ObjectPageSubSection >
+						<blocks>
+							<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DatesSmartForm" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection showTitle="true" title="{i18n>shipping}">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ShippingSmartForm" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="{i18n>termsConditions}" showTitle="true">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.TermsAndConditionsSmartForm" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="{i18n>customFieldsLabel}" showTitle="true" visible="{dataModel>/customFieldVisible}">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.CustomFieldsForm" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer width="100%">
+			<m:OverflowToolbar >
+				<!--text="{= ${dataModel>/errroMessages}.length}"-->
+				<m:Button id="messagePopoverBtn"
+					visible="{parts: ['dataModel>/errroMessagesBtnVisible','dataModel>/errroMessages'], formatter:'.errorBtnVisibleFormatter'}"
+					icon="sap-icon://message-error" text="{path: 'dataModel>/errroMessages', formatter: '.getErrorMessagesCount' }" type="Negative"
+					press="onMessagePopoverPress"/>
+				<m:ToolbarSpacer/>
+				<m:Button id="headerObjectPageSubmitBtn" type="Emphasized" text="{i18n>submit}" press="onSubmitClick"/>
+				<m:Button type="Default" text="{i18n>cancel}" press="onCancel"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

@@ -1,0 +1,13 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core">
+	<m:HBox>
+		<m:Input editable="false" visible="{ path:'stateModel>currentOperation', formatter: '.onDCVOperationFormatter'}" value="{i18n>noValue}"
+			width="10rem"></m:Input>
+		<m:Button class="sapUiTinyMarginBegin" type="Transparent" visible="{= ${stateModel>visible} === false}" text="{i18n>undo}"
+			press="onUndoClick"/>
+	</m:HBox>
+</core:FragmentDefinition>

@@ -1,0 +1,13 @@
+{
+  "application": "cus.sd.so.mccs1",
+  "version": "9.0.4",
+  "buildNumber": "245",
+  "buildId": "245",
+  "branch": "detached",
+  "revision": "6cbcea1b866fb1533b490e15c688bcedeb0ea610",
+  "GitURL": "",
+  "buildStatus": "${env.buildStatus}",
+  "translationComplete": "${env.translationComplete}",
+  "cidi": "${env.cidi}",
+  "cfdCM": "${env.cfdCM}"
+}

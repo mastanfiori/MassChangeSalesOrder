@@ -1,0 +1,18 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core">
+   <m:HBox class="sapUiTinyMarginBegin">
+		<m:MenuButton text="{i18n>change}" type="Transparent" visible="{stateModel>visible}" menuPosition="RightBottom">
+			<m:menu>
+				<m:Menu itemSelected="onMenuItemClick">
+					<m:MenuItem text="{i18n>changeCurrentValue}" key="{dataModel>/changeOperation/changeCurrentValueKey}"/>
+					<m:MenuItem text="{i18n>deleteCurrentValue}" key="{dataModel>/changeOperation/deleteCurrentValueKey}"/>
+				</m:Menu>
+			</m:menu>
+		</m:MenuButton>
+		<m:Text class="sapUiTinyMarginEnd" visible="{= ${stateModel>visible} === false }" text="{i18n>changeto}" wrapping="false"/>
+	</m:HBox>
+</core:FragmentDefinition>

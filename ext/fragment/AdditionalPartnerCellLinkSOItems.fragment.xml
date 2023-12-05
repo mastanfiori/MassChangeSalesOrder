@@ -1,0 +1,10 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="ListReportCell2FragmentDefinition" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<!--<smartLink:SmartLink id="MassChangeSalesOrderSmartLink" text="{MassChangeSalesOrder}" semanticObject="MassChangeSalesOrder" emphasized="true" mapFieldToSemanticObject="false" beforePopoverOpens="onBeforePopoverOpens"></smartLink:SmartLink>-->
+	<!--<Text text="Additional Partner"/>-->
+	<Link text="{path: 'AdditionalPartnerName'}" id="link2" press="onPressPartnerLink"/>
+</core:FragmentDefinition>

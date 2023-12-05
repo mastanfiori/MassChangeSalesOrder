@@ -1,0 +1,14 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core">
+	<m:Menu itemSelected="handleMenuItemPress" items="{ path : 'actionModel>/actionData/check', sorter : { path : 'SlsDocMassChgActionID'} }">
+		<m:MenuItem text="{actionModel>SlsDocMassChgActionDescription}">
+			<m:customData>
+				<core:CustomData key="{actionModel>SlsDocMassChgActionID}" value="{actionModel>SlsDocMassChgActionDescription}"/>
+			</m:customData>
+		</m:MenuItem>
+	</m:Menu>
+</core:FragmentDefinition>

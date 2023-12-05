@@ -1,0 +1,15 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="ListReportColumn1FragmentDefinition" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<!--Partner -->
+	<Column id="AdditionalPartnersColumn1" visible="false">
+		<Text id="AdditionalPartnerText1" text="{i18n>AdditionalPartners}" tooltip="{i18n>AdditionalPartners}"/>
+		<customData>
+			<core:CustomData key="p13nData"
+				value='\{"columnKey": "AdditionalPartnerName", "leadingProperty":"AdditionalPartnerName"}'/>
+		</customData>
+	</Column>
+</core:FragmentDefinition>

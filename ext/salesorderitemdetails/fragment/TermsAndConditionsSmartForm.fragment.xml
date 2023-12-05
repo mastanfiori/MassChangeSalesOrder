@@ -1,0 +1,108 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<smartForm:SmartForm editable="true" entityType="SlsDocReadReqType" id="TermsAndConditionsSmartForm">
+		<smartForm:layout>
+			<smartForm:Layout singleGroupFullSize="true" labelSpanXL="2" labelSpanL="2" labelSpanM="2" emptySpanXL="1" emptySpanL="1"/>
+		</smartForm:layout>
+		<smartForm:Group>
+			<smartForm:GroupElement label="{i18n>paymentTerms}"  useHorizontalLayout="true" binding="{stateModel>/termsAndConditions/paymentTerms}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="paymentTermsLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_CustomerPaymentTerms'},{path: 'dataModel>/readOnlyData/CustomerPaymentTerms'}, {path: 'dataModel>/readOnlyData/CustomerPaymentTermsName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="paymentTermsLbl" text="{i18n>paymentTerms}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+						tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_CustomerPaymentTerms}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{CustomerPaymentTerms}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>incoterms}" useHorizontalLayout="true" binding="{stateModel>/termsAndConditions/incoterms}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="incotermsLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_IncotermsClassification'},{path: 'dataModel>/readOnlyData/IncotermsClassification'}, {path: 'dataModel>/readOnlyData/IncotermsClassificationName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="incotermsLbl" text="{i18n>incoterms}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_IncotermsClassification}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField class="smartFiledObjectPage" visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}"
+						value="{IncotermsClassification}" change="onValueChange" textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>incotermsVersion}" useHorizontalLayout="true"
+				binding="{stateModel>/termsAndConditions/incotermsVersion}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="incotermsVersion1Lbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_IncotermsVersion'},{path: 'dataModel>/readOnlyData/IncotermsVersion'}, {path: 'dataModel>/readOnlyData/IncotermsVersionName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="incotermsVersion1Lbl" text="{i18n>incotermsVersion}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_IncotermsVersion}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField class="smartFiledObjectPage" visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}"
+						value="{IncotermsVersion}" change="onValueChange" textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>incotermsLocation1}" useHorizontalLayout="true" binding="{stateModel>/termsAndConditions/incotermsLocation1}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="incotermsLocation1Lbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_IncotermsLocation1'}, {path: 'dataModel>/readOnlyData/IncotermsLocation1'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+							<core:InvisibleText id="incotermsLocation1Lbl" text="{i18n>incotermsLocation1}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_IncotermsLocation1}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField class="smartFiledObjectPage" visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}"
+						value="{IncotermsLocation1}" change="onValueChange" textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>incotermsLocation2}" useHorizontalLayout="true"
+				binding="{stateModel>/termsAndConditions/incotermsLocation2}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="incotermsLocation2Lbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_IncotermsLocation2'}, {path: 'dataModel>/readOnlyData/IncotermsLocation2'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="incotermsLocation2Lbl" text="{i18n>incotermsLocation2}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_IncotermsLocation2}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField class="smartFiledObjectPage" visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}"
+						value="{IncotermsLocation2}" change="onValueChange" textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

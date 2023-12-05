@@ -1,0 +1,51 @@
+{
+  "welcomeFile": "index.html",
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "BGE_DEV_310",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "BGE DEV 310 Unit Testing"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "target": {
+        "type": "destination",
+        "name": "BGE_DEV_310",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "BGE DEV 310 Unit Testing"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/resources/cus/sd/libmccs1",
+      "target": {
+        "type": "destination",
+        "name": "BGE_DEV_310",
+        "entryPath": "/sap/bc/ui5_ui5/sap/sd_lib_mccs1",
+        "preferLocal": true
+      },
+      "description": "cus/sd/libmccs1 Reuse Library"
+    }
+  ]
+}

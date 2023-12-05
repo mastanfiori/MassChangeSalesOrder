@@ -1,0 +1,140 @@
+{
+	"basicData": {
+		"itemcategory": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "SalesDocumentItemCategory",
+			"value": ""
+		},
+		"product": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "Product",
+			"value": ""
+		},
+		"batch": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "Batch",
+			"value": ""
+		},
+		"ProfitCenter": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "ProfitCenter",
+			"value": ""
+		},
+		"WBSElement": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "WBSElementExternalID",
+			"value": ""
+		}
+	},
+	"date": {
+		"pricingDate": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "PricingDate",
+			"value": ""
+		},
+		"billingDate": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "BillingDocumentDate",
+			"value": ""
+		},
+		"RequestedDeliveryDate": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "RequestedDeliveryDate",
+			"value": ""
+		}
+	},
+	"shipping": {
+		"deliveryPriority": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "DeliveryPriority",
+			"value": ""
+		},
+		"storageLocation": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "StorageLocation",
+			"value": ""
+		},
+		"shippingPlant": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "Plant",
+			"value": ""
+		},
+		"shippingCondition": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "ShippingCondition",
+			"value": ""
+		},
+		"shippingPoint": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "ShippingPoint",
+			"value": ""
+		},
+		"shippingType": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "ShippingType",
+			"value": ""
+		},
+		"unloadingPoint": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "UnloadingPoint",
+			"value": ""
+		},
+		"route": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "Route",
+			"value": ""
+		}
+	},
+	"termsAndConditions": {
+		"paymentTerms": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "CustomerPaymentTerms",
+			"value": ""
+		},
+		"incoterms": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsClassification",
+			"value": ""
+		},
+		"incotermsVersion": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsVersion",
+			"value": ""
+		},
+
+		"incotermsLocation1": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsLocation1",
+			"value": ""
+		},
+		"incotermsLocation2": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsLocation2",
+			"value": ""
+		}
+	},
+	"CustomData": {
+
+	}
+}

@@ -1,0 +1,112 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<smartForm:SmartForm editable="true" entityType="SlsDocReadReqType" id="BasicDataSmartForm">
+		<smartForm:layout>
+			<smartForm:Layout singleGroupFullSize="true" labelSpanXL="2" labelSpanL="2" labelSpanM="2" emptySpanXL="1" emptySpanL="1"/>
+		</smartForm:layout>
+		<smartForm:Group>
+			<smartForm:GroupElement label="{i18n>itemcategory}" useHorizontalLayout="true" binding="{stateModel>/basicData/itemcategory}">
+				<m:FlexBox renderType="Bare">
+					<!--<m:HBox>-->
+					<m:Input editable="false" ariaLabelledBy="itemcategoryLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_SalesDocumentItemCategory'},{path: 'dataModel>/readOnlyData/SalesDocumentItemCategory'}, {path: 'dataModel>/readOnlyData/SalesDocumentItemCategoryName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+							<core:InvisibleText id="itemcategoryLbl" text="{i18n>itemcategory}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_SalesDocumentItemCategory}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{SalesDocumentItemCategory}"
+						change="onValueChange" textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+					<!--</m:HBox>-->
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>product}" useHorizontalLayout="true" binding="{stateModel>/basicData/product}">
+				<!--<m:HBox>-->
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="productLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_Product'}, {path: 'dataModel>/readOnlyData/Product'}, {path: 'dataModel>/readOnlyData/ProductName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+						<core:InvisibleText id="productLbl" text="{i18n>product}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_Product}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{Product}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+					<!--</m:HBox>-->
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>batch}" useHorizontalLayout="true" binding="{stateModel>/basicData/batch}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="batchLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_Batch'}, {path: 'dataModel>/readOnlyData/Batch'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+							<core:InvisibleText id="batchLbl" text="{i18n>batch}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_Batch}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.ChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{Batch}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>ProfitCenter}" useHorizontalLayout="true" binding="{stateModel>/basicData/ProfitCenter}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="ProfitCenterLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_ProfitCenter'}, {path: 'dataModel>/readOnlyData/ProfitCenter'},{path: 'dataModel>/readOnlyData/ProfitCenterName'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+							<core:InvisibleText id="ProfitCenterLbl" text="{i18n>ProfitCenter}"/>
+					<m:HBox width="1.5rem">
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_ProfitCenter}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DatesChangeMenuAndText" type="XML"/>
+					<!--for change current value-->
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{ProfitCenter}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<!--for delete current value-->
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement label="{i18n>WBSElement}" useHorizontalLayout="true" binding="{stateModel>/basicData/WBSElement}">
+				<m:FlexBox renderType="Bare">
+					<m:Input editable="false" ariaLabelledBy="WBSElementLbl"
+						value="{parts: [ {path: 'dataModel>/readOnlyData/UICT_WBSElementExternalID'}, {path: 'dataModel>/readOnlyData/WBSElementExternalID'},{path: 'dataModel>/readOnlyData/WBSDescription'} ], formatter: '.formatter.displayReadOnlyData'}"
+						width="20rem"/>
+							<core:InvisibleText id="WBSElementLbl" text="{i18n>WBSElement}"/>
+					<m:HBox width="1.5rem"> 
+						<core:Icon class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginEnd" color="#E69A17" src="sap-icon://message-information"
+							tooltip="{i18n>diffValues}" visible="{dataModel>/readOnlyData/UICT_WBSElementExternalID}"/>
+					</m:HBox>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DatesChangeMenuAndText" type="XML"/>
+					<smartField:SmartField fieldGroupIds="itemSmartFieldGroup" mandatory="true" class="smartFiledObjectPage"
+						visible="{ path:'stateModel>currentOperation', formatter: '.onCCVOperationFormatter'}" value="{WBSElementExternalID}" change="onValueChange"
+						textInEditModeSource="ValueListNoValidation" width="20rem"/>
+					<core:Fragment fragmentName="cus.sd.so.mccs1.ext.salesorderitemdetails.fragment.DeleteCurrentValue" type="XML"/>
+				</m:FlexBox>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

@@ -1,0 +1,8 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="ListReportCell1FragmentDefinition" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Link text="{path: 'AdditionalPartnerName'}" id="link1" press="onPressPartnerLink"/>
+</core:FragmentDefinition>

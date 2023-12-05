@@ -1,0 +1,103 @@
+{
+	"basicData": {
+		"orderReason": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "SDDocumentReason",
+			"value": ""
+		},
+		"salesOffice": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "SalesOffice",
+			"value": ""
+		},
+		"salesGroup": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "SalesGroup",
+			"value": ""
+		},
+		"salesDistrict": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "SalesDistrict",
+			"value": ""
+		}
+	},
+	"date": {
+		"pricingDate": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "PricingDate",
+			"value": ""
+		},
+		"billingDate": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "BillingDocumentDate",
+			"value": ""
+		},
+		"requestedDeliveryDate": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "RequestedDeliveryDate",
+			"value": ""
+		}
+	},
+	"shipping": {
+		"shippingCondition": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "ShippingCondition",
+			"value": ""
+		}
+	},
+	"termsAndConditions": {
+		"paymentTerms": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "CustomerPaymentTerms",
+			"value": ""
+		},
+		"paymentMethod": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "PaymentMethod",
+			"value": ""
+		},
+		"incoterms": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsClassification",
+			"value": ""
+		},
+		"incotermsVersion": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsVersion",
+			"value": ""
+		},
+		"incotermsLocation1": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsLocation1",
+			"value": ""
+		},
+		"incotermsLocation2": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "IncotermsLocation2",
+			"value": ""
+		},
+		"transactionCurrency": {
+			"visible": true,
+			"currentOperation": "",
+			"key": "TransactionCurrency",
+			"value": ""
+		}
+	},
+	"CustomData": {
+
+	}
+}

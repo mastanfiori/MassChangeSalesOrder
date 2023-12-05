@@ -1,0 +1,25 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<Popover title="{i18n>AdditionalPartners}" class="sapUiContentPadding" placement="Right" titleAlignment="Center">
+		<List id="list" items="{dataModel>/partnerInfo}">
+			<CustomListItem>
+				<layout:VerticalLayout class="sapUiContentPadding">
+					<Label text="{dataModel>BusinessPartnerFullName}" design="Bold"></Label>
+					<HBox>
+						<Label text="{i18n>PartnerId} "></Label>
+						<Link text="{dataModel>BusinessPartner}" press="navigateToSupplierFactsheet"></Link>
+					</HBox>
+					<Label text="{i18n>PartnerFunction1}"></Label>
+					<HBox>
+						<Label text="{dataModel>PartnerFunctionName}"></Label>
+						<Label text="{dataModel>PartnerFunction}"></Label>
+					</HBox>
+				</layout:VerticalLayout>
+			</CustomListItem>
+		</List>
+	</Popover>
+</core:FragmentDefinition>

@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/sd_mcc_so_mass_update_srv/$metadata"><edmx:Include Namespace="SD_MCC_SO_MASS_UPDATE_SRV" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="sd_mcc_so_mass_update_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_CustomerSalesAreaVHType/OrganizationBPName1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_CustomerSalesAreaVHType/OrganizationBPName2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_CustomerSalesAreaVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Customer"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CustomerName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PostalCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CityName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Country"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Customer</PropertyPath>
+						<PropertyPath>CustomerName</PropertyPath>
+						<PropertyPath>PostalCode</PropertyPath>
+						<PropertyPath>CityName</PropertyPath>
+						<PropertyPath>Country</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Communication.Contact">
+					<Record>
+						<PropertyValue Property="adr">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="locality" Path="CityName"/><PropertyValue Property="country" Path="Country"/><PropertyValue Property="code" Path="PostalCode"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Communication.Address" Qualifier="pref">
+					<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="locality" Path="CityName"/><PropertyValue Property="country" Path="Country"/><PropertyValue Property="code" Path="PostalCode"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_DischannelvaluehelpType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Distribution Channel"/><PropertyValue Property="TypeNamePlural" String="Distribution Channels"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/AdditionalPartnerName"><Annotation Term="UI.HiddenFilter"/></Annotations><Annotations/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_BillingCompanyCode"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_BillToParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_BusinessArea"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_ControllingArea"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_CostCenter"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_CreditControlArea"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_CustomerGroup"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_CustomerPaymentTerms"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_DeliveryBlockReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_DistributionChannel"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_HdrGeneralIncompletionStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_HeaderBillgIncompletionStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_HeaderBillingBlockReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_HeaderDelivIncompletionStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_IncotermsClassification"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_IncotermsVersion"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_NonStdPartner"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OrganizationDivision"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallBillingBlockStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallChmlCmplncStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallDangerousGoodsStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallDelivConfStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallDeliveryBlockStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallDeliveryStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallOrdReltdBillgStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallPricingIncompletionSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallSDDocumentRejectionSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallSDProcessStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OverallTotalDeliveryStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OvrlSftyDataSheetSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OvrlTradeCmplncEmbargoStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OvrlTrdCmplncLegalCtrlChkSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_OvTrdCmplncSnctndListChkSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_PayerParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_SalesDistrict"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_SalesDocumentItem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_SalesGroup"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_SalesOffice"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_SalesOrderItem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_ShippingCondition"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_ShippingType"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_ShipToParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_SoldToParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_SolutionOrder"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_TotalBlockStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_TotalCreditCheckStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/to_TransactionCurrency"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesOrderTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesOrganizationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/IncotermsTransferLocation"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/IncotermsLocation1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/IncotermsLocation2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/OverallTotalDeliveryStatusDesc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/OverallDeliveryStatusDesc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/OrganizationBPName1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/OrganizationBPName2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SlsDocMassChgEntityLevel"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesDocumentType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SDDocumentCategory"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesOfficeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesDistrictName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/ShippingConditionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/IncotermsClassificationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/IncotermsVersionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/ShippingTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/CurrencyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SDDocumentReasonText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/CustomerPaymentTermsName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesOrder"><Annotation Term="Common.SemanticObject" String="SalesOrder"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SoldToParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="SoldToParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/ShipToParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="ShipToParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/PayerParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="PayerParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/BillToParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="BillToParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/ResponsibleEmployee"><Annotation Term="Common.SemanticObject" String="Employee"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="ResponsibleEmployee"/><PropertyValue Property="SemanticObjectProperty" String="PersonWorkAgreement"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/SalesEmployee"><Annotation Term="Common.SemanticObject" String="Employee"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="SalesEmployee"/><PropertyValue Property="SemanticObjectProperty" String="PersonWorkAgreement"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/Product"><Annotation Term="Common.SemanticObject" String="Product"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/Customer"><Annotation Term="Common.SemanticObject" String="Customer"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/Supplier"><Annotation Term="Common.SemanticObject" String="Supplier"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/Personnel"><Annotation Term="Common.SemanticObject" String="Employee"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/ContactPerson"><Annotation Term="Common.SemanticObject" String="ContactPerson"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType/DeliveryBlockReason">
+				<Annotation Term="Common.Text" Path="to_DeliveryBlockReason/DeliveryBlockReason_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrderType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrder"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrderType"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrganization"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SoldToParty"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallDeliveryStatus"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TotalNetAmount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="CreationDate"/><PropertyValue Property="Descending" Bool="true"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>SalesOrderTypeName</PropertyPath>
+								<PropertyPath>SalesOrder</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>SalesDistrict</PropertyPath>
+						<PropertyPath>RequestedDeliveryDate</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="SalesOrder">
+					<Record><PropertyValue Property="Text" String="Sales Orders"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesOrderItem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SDDocumentCategory"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/DeliveryBlockReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ItemIncotermsClassification"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/TotalNetAmount"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/TransactionCurrency"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/MasterSalesContract"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesOrderItemCategoryName"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ProductName"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ReturnReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/RequestedQuantity"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/RequestedQuantityUnit"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/NetAmount"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/DeliveryPriorityDesc"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesDocumentRjcnReasonName"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/AdditionalPartnerName"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SlsDocMassChgEntityLevel"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ItemBillingBlockReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_Batch"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_BillingBlockStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_BillToParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ChmlCmplncStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ContractItemDownPaymentStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_CustomerPaymentTerms"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_DangerousGoodsStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_DeliveryBlockStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_DeliveryConfirmationStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_DeliveryPriority"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_DeliveryStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_HeaderBillingBlockReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_IncotermsClassification"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_IncotermsVersion"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_Indicator"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ItemBillingBlockReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ItemBillingIncompletionStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ItemCategory"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ItemDelivIncompletionSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ItemGeneralIncompletionStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_Material"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_MaterialPlant"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_NonStdPartner"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_OrderRelatedBillingStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_OrganizationDivision"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_OverallSDDocumentRejectionSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_OvrlTrdCmplncLegalCtrlChkSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_PayerParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_Plant"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_PricingIncompletionStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_Product"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ProductText"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_RequestedQuantityUnit"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ResponsibleEmployee"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ReturnReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_Route"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SafetyDataSheetStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SalesDistrict"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SalesEmployee"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SalesItemCompletePartner"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ScheduleLine"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SDDocReferenceStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SDDocumentCategory"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SDDocumentRejectionStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SDProcessStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ShippingPoint"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ShippingType"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_ShipToParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SoldToParty"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_SolutionOrder"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_StorageLocation"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_TotalDeliveryStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_TotalSDDocReferenceStatus"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_TransactionCurrency"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_TrdCmplncEmbargoSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/to_TrdCmplncSnctndListChkSts"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/IncotermsTransferLocation"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/IncotermsLocation1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/IncotermsLocation2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/Material"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SlsDocMassChangeRequestUUID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesOrderItemText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesDocumentType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/OrganizationBPName1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/OrganizationBPName2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesDocumentItemCategory"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesDistrictName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/IncotermsClassificationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/IncotermsVersionName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ShippingTypeName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/CurrencyName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SDDocumentReasonText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/CustomerPaymentTermsName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesDocumentItemCategoryName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/PlantName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/StorageLocationName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ShippingPointName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/RouteName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesOrder"><Annotation Term="Common.SemanticObject" String="SalesOrder"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/Product"><Annotation Term="Common.SemanticObject" String="Product"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="Product"/><PropertyValue Property="SemanticObjectProperty" String="Product"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SoldToParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="SoldToParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ShipToParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="ShipToParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/PayerParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="PayerParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/BillToParty"><Annotation Term="Common.SemanticObject" String="Customer"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="BillToParty"/><PropertyValue Property="SemanticObjectProperty" String="Customer"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/ResponsibleEmployee"><Annotation Term="Common.SemanticObject" String="Responsible Employee"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="ResponsibleEmployee"/><PropertyValue Property="SemanticObjectProperty" String="PersonWorkAgreement"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType/SalesEmployee"><Annotation Term="Common.SemanticObject" String="Sales Employee"/>
+				<Annotation Term="Common.SemanticObjectMapping">
+					<Collection>
+						<Record><PropertyValue Property="LocalProperty" PropertyPath="SalesEmployee"/><PropertyValue Property="SemanticObjectProperty" String="PersonWorkAgreement"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsOrdItemType">
+				<Annotation Term="UI.DataPoint" Qualifier="RequestedQuantityHeader">
+					<Record><PropertyValue Property="Value" Path="RequestedQuantity"/><PropertyValue Property="Title" String="Requested Quantity"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFilterGeneralInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="AdditionalCustomerGroup5"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="AdditionalCustomerGroup4"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="AdditionalCustomerGroup3"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="AdditionalCustomerGroup2"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="AdditionalCustomerGroup1"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CustomerGroup"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseOrderByCustomer"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CustomerPurchaseOrderDate"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OrderID"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrderType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreatedByUser"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreationDate"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SDDocumentReason"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrder"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Header Basic Data"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFilterItemGeneralInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryPriorityDesc"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Batch"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Product"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrderItemCategory"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrderItemCategoryName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="BusinessSolutionOrder"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Division"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProfitCenter"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Item Basic Data"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFilterItemOrgInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreditControlArea"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="BillingCompanyCode"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ControllingArea"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CostCenter"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="BusinessArea"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesDistrict"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOffice"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesGroup"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OrganizationDivision"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DistributionChannel"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrganization"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Organization"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFilterItemStatusHeaderInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrderApprovalReason"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="HeaderBillingBlockReason"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ContractDownPaymentStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallSafetyDataSheetStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallDangerousGoodsStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallChmlCmplncStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OvrlTrdCmplncLegalCtrlChkSts"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OvrlTrdCmplncSnctndListChkSts"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallTrdCmplncEmbargoSts"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallDelivConfStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="HeaderDelivIncompletionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallPricingIncompletionSts"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="HeaderBillgIncompletionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="HdrGeneralIncompletionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallBillingBlockStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallDeliveryBlockStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TotalCreditCheckStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TotalBlockStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallOrdReltdBillgStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallDeliveryStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallSDDocumentRejectionSts"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallTotalDeliveryStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OverallSDProcessStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryBlockReason"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Header Status and Blocks"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFilterItemStatusInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesDocumentRjcnReason"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ContractItemDownPaymentStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SafetyDataSheetStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DangerousGoodsStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ChmlCmplncStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TrdCmplncSnctndListChkSts"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TrdCmplncEmbargoSts"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TotalSDDocReferenceStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SDDocReferenceStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryConfirmationStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemDeliveryIncompletionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PricingIncompletionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemBillingIncompletionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemGeneralIncompletionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="BillingBlockStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryBlockStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SDDocumentRejectionStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="OrderRelatedBillingStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TotalDeliveryStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SDProcessStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryStatus"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Item Status and Blocks"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFilterPartnerInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesEmployee"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ResponsibleEmployee"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="BillToParty"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PayerParty"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ShipToParty"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SoldToParty"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Partners"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFilterPartnersAdditionalInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ContactPerson"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Personnel"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Supplier"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Customer"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PartnerFunction"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Additional Partners"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFiltersDatesInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrderDate"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RequestedDeliveryDate"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Dates"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFiltersDatesItemInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PricingDate"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="BillingDocumentDate"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String=" Item Dates"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFiltersItemShippingHeaderInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ShippingType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ShippingCondition"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Shipping"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFiltersItemShippingInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Route"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DeliveryPriority"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ShippingPoint"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StorageLocation"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemIsDeliveryRelevant"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Item Shipping Data"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFiltertermsConditionInfo">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PaymentMethod"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CustomerPaymentTerms"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="IncotermsClassification"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Terms and Conditions"/></Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="smartFiltertermsConditionInfoItem">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="IncotermsVersion"/></Record>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Label" String="Item Terms and Conditions"/></Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrder"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOrderItem"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Product"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RequestedQuantity"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SoldToParty"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NetAmount"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="BillingDocumentDate"/><PropertyValue Property="Descending" Bool="true"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>SalesOrderItem</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>SalesOrder</PropertyPath>
+						<PropertyPath>SalesOrganization</PropertyPath>
+						<PropertyPath>DistributionChannel</PropertyPath>
+						<PropertyPath>PurchaseOrderByCustomer</PropertyPath>
+						<PropertyPath>OverallTotalDeliveryStatus</PropertyPath>
+						<PropertyPath>OverallSDProcessStatus</PropertyPath>
+						<PropertyPath>Product</PropertyPath>
+						<PropertyPath>SoldToParty</PropertyPath>
+						<PropertyPath>ShipToParty</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="SalesOrderItem">
+					<Record><PropertyValue Property="Text" String="Sales Order Items"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_SalesGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_SalesOffice"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_SalesDistrict"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_RequestedDeliveryDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_ShippingCondition"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_IncotermsClassification"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_IncotermsTransferLocation"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_IncotermsLocation1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_IncotermsLocation2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_IncotermsVersion"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_ShippingType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_ReceivingPoint"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_PricingDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_PurchaseOrderByCustomer"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_TransactionCurrency"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_BillingDocumentDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_SalesDocumentDate"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_SDDocumentReason"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_CustomerPaymentTerms"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_PaymentMethod"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_SalesDocumentItemCategory"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_Product"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_SalesDocumentItemText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_ProductHierarchyNode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_Batch"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_Plant"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_StorageLocation"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_Division"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_ShippingPoint"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_DeliveryPriority"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_Route"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_WBSElementExternalID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/UICT_ProfitCenter"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/SalesGroup">
+				<Annotation Term="Common.Text" Path="SalesGroupName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/SalesOffice">
+				<Annotation Term="Common.Text" Path="SalesOfficeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/SalesDistrict">
+				<Annotation Term="Common.Text" Path="SalesDistrictName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/ShippingCondition">
+				<Annotation Term="Common.Text" Path="ShippingConditionName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/IncotermsClassification">
+				<Annotation Term="Common.Text" Path="IncotermsClassificationName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/DeliveryBlockReason">
+				<Annotation Term="Common.Text" Path="to_DeliveryBlockReason/DeliveryBlockReason_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/ShippingType">
+				<Annotation Term="Common.Text" Path="ShippingTypeName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/SalesDocumentRjcnReason"/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/TransactionCurrency">
+				<Annotation Term="Common.Text" Path="CurrencyName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/HeaderBillingBlockReason"/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/SDDocumentReason">
+				<Annotation Term="Common.Text" Path="SDDocumentReasonText"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/CustomerPaymentTerms">
+				<Annotation Term="Common.Text" Path="CustomerPaymentTermsName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/PaymentMethod"/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/SalesDocumentItemCategory">
+				<Annotation Term="Common.Text" Path="SalesDocumentItemCategoryName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/Product">
+				<Annotation Term="Common.Text" Path="SalesDocumentItemText"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/Batch"/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/Plant">
+				<Annotation Term="Common.Text" Path="PlantName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/StorageLocation">
+				<Annotation Term="Common.Text" Path="StorageLocationName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/Division">
+				<Annotation Term="Common.Text" Path="DivisionName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/ShippingPoint">
+				<Annotation Term="Common.Text" Path="ShippingPointName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/DeliveryPriority">
+				<Annotation Term="Common.Text" Path="DeliveryPriorityDesc"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/Route">
+				<Annotation Term="Common.Text" Path="RouteName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/ItemBillingBlockReason">
+				<Annotation Term="Common.Text" Path="to_ItemBillingBlockReason/BillingBlockReason_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/ReturnReason">
+				<Annotation Term="Common.Text" Path="to_ReturnReason/ReturnReason_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/WBSElementExternalID">
+				<Annotation Term="Common.Text" Path="WBSDescription"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/PricingType">
+				<Annotation Term="Common.Text" Path="to_PricingType/PricingType_Text"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.SlsDocReadReqType/ProfitCenter">
+				<Annotation Term="Common.Text" Path="ProfitCenterName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_NonStdPartFuncBySlsDocCatVHType/UICT_Customer"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_NonStdPartFuncBySlsDocCatVHType/UICT_ContactPerson"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_NonStdPartFuncBySlsDocCatVHType/UICT_Personnel"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_NonStdPartFuncBySlsDocCatVHType/UICT_Supplier"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_NonStdPartFuncBySlsDocCatVHType/SDDocumentCategory"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_NonStdPartFuncBySlsDocCatVHType/PartnerFunction"><Annotation Term="UI.Hidden"/>
+				<Annotation Term="Common.Text" Path="PartnerFunctionName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_OrgDivisionValueHelpType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Division"/><PropertyValue Property="TypeNamePlural" String="Divisions"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_PartnerFuncBySalesDocCatVHType/UICT_Customer"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_PartnerFuncBySalesDocCatVHType/UICT_ContactPerson"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_PartnerFuncBySalesDocCatVHType/UICT_Personnel"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_PartnerFuncBySalesDocCatVHType/UICT_Supplier"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_PartnerFuncBySalesDocCatVHType/PartnerIsNotChangeable"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_PartnerFuncBySalesDocCatVHType/SDDocumentCategory"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_PartnerFuncBySalesDocCatVHType/PartnerFunction"><Annotation Term="UI.Hidden"/>
+				<Annotation Term="Common.Text" Path="PartnerFunctionName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesDocPaymentMethodVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PaymentMethod"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PaymentMethodName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesDocumentItemPlantVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PlantName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesDocumentUserVHType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Sales Document User"/><PropertyValue Property="TypeNamePlural" String="Sales Document Users"/></Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="UserID"/><PropertyValue Property="Descending" Bool="false"/></Record>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="UserDescription"/><PropertyValue Property="Descending" Bool="false"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesGroupValueHelpType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Sales Group"/><PropertyValue Property="TypeNamePlural" String="Sales Groups"/></Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesGroup"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesOfficeValueHelpType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Sales Office"/><PropertyValue Property="TypeNamePlural" String="Sales Offices"/></Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SalesOffice"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesOrderTypeValueHelpType/NumberRangeForIntIDAssignment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesOrderTypeValueHelpType/NumberRangeForExtIDAssignment"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SalesOrderTypeValueHelpType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Sales Order Type"/><PropertyValue Property="TypeNamePlural" String="Sales Order Types"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SlsDocFlfmtSlsDocTypeVHType/SalesDocumentTypeLangDepdnt"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SlsDocItemShippingPointVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ShippingPoint"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SlsDocItemStorageLocationVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StorageLocation"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StorageLocationName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SoldToValueHelpType/EmailAddress"><Annotation Term="Communication.IsEmailAddress"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SoldToValueHelpType/OrganizationBPName1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SoldToValueHelpType/OrganizationBPName2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SoldToValueHelpType/BusinessPartnerImageURL"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SoldToValueHelpType/InternationalPhoneNumber"><Annotation Term="UI.Hidden"/><Annotation Term="Communication.IsPhoneNumber"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.C_SoldToValueHelpType">
+				<Annotation Term="UI.QuickViewFacets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Address"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SoldToQuickView"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="SoldToQuickView">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PostalCode"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CityName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Country"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Sold-To Party"/><PropertyValue Property="TypeNamePlural" String="Sold-To Parties"/><PropertyValue Property="ImageUrl" Path="BusinessPartnerImageURL"/></Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CustomerName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PostalCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CityName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Country"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Customer"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CustomerName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PostalCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CityName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Country"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Customer</PropertyPath>
+						<PropertyPath>CustomerName</PropertyPath>
+						<PropertyPath>PostalCode</PropertyPath>
+						<PropertyPath>CityName</PropertyPath>
+						<PropertyPath>Country</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Communication.Contact">
+					<Record>
+						<PropertyValue Property="adr">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="locality" Path="CityName"/><PropertyValue Property="country" Path="Country"/><PropertyValue Property="code" Path="PostalCode"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="tel">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.PhoneType/work Communication.PhoneType/preferred"/><PropertyValue Property="uri" Path="InternationalPhoneNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/work"/><PropertyValue Property="address" Path="EmailAddress"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Communication.Address" Qualifier="pref">
+					<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="locality" Path="CityName"/><PropertyValue Property="country" Path="Country"/><PropertyValue Property="code" Path="PostalCode"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_BusinessSolutionOrderStdVHType/ServiceDocumentStatusName"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_BusinessSolutionOrderStdVHType/ServiceDocumentStatus">
+				<Annotation Term="Common.Text" Path="ServiceDocumentStatusName"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_BusinessSolutionOrderStdVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ServiceDocumentStatusName"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ServiceDocumentStatus"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_Customer_VHType/CustomerAccountGroup"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_Customer_VHType/AuthorizationGroup"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_Customer_VHType/IsBusinessPurposeCompleted"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_Customer_VHType/IsCompetitor"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_DeliveryBlockReasonType/DeliveryBlockReason"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_DeliveryBlockReasonType/DeliveryBlockReason_Text"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_MaterialType/ProdCharc1InternalNumber"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_MaterialType/ProdCharc2InternalNumber"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_MaterialType/ProdCharc3InternalNumber"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductGroupType/AuthorizationGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductVHType/to_ProductCategory"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductVHType/IndustrySector"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductVHType/GrossWeight"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductVHType/NetWeight"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductVHType/WeightUnit"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductVHType/ManufacturerNumber"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ProductVHType/ProductManufacturerNumber"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentItemType/ID"><Annotation Term="UI.Hidden"/></Annotations><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentItemType/NetAmount"/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/ID"><Annotation Term="UI.Hidden"/></Annotations><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/ScheduleLineOrderQuantity"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/CorrectedQtyInOrderQtyUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/ConfdOrderQtyByMatlAvailCheck"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/OpenReqdDelivQtyInOrdQtyUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/OpenReqdDelivQtyInBaseUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/OpenConfdDelivQtyInOrdQtyUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/OpenConfdDelivQtyInBaseUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/DeliveredQtyInOrderQtyUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/DeliveredQuantityInBaseUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/RequestedRqmtQtyInBaseUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/ConfirmedRqmtQtyInBaseUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/MRPRequiredQuantityInBaseUnit"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SalesDocumentScheduleLineType/OpenDeliveryNetAmount"/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ServiceDocumentEnhcdType/ID"><Annotation Term="UI.Hidden"/></Annotations><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ServiceDocumentEnhcdType/ServiceDocNetAmount"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ServiceDocumentEnhcdType/ServiceDocGrossAmount"/><Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ServiceDocumentEnhcdType/ServiceDocTaxAmount"/>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_ShippingPointStdVHType/ShippingPointName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SlsDocItmNonStdPartnerType/EmailAddress"><Annotation Term="Communication.IsEmailAddress"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SlsDocItmNonStdPartnerType/InternationalPhoneNumber"><Annotation Term="Communication.IsPhoneNumber"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SlsDocItmNonStdPartnerType/InternationalMobilePhoneNumber"><Annotation Term="Communication.IsPhoneNumber"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SlsDocItmNonStdPartnerType">
+				<Annotation Term="Communication.Contact">
+					<Record><PropertyValue Property="fn" Path="BusinessPartnerFullName"/>
+						<PropertyValue Property="adr">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="country" Path="Country"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="tel">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.PhoneType/cell"/><PropertyValue Property="uri" Path="InternationalMobilePhoneNumber"/></Record>
+								<Record><PropertyValue Property="type" EnumMember="Communication.PhoneType/work"/><PropertyValue Property="uri" Path="InternationalPhoneNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/work"/><PropertyValue Property="address" Path="EmailAddress"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Communication.Address" Qualifier="pref">
+					<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="country" Path="Country"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_SlsDocNonStdPartnerType">
+				<Annotation Term="Communication.Contact">
+					<Record><PropertyValue Property="fn" Path="BusinessPartnerFullName"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_Supplier_VHType/AuthorizationGroup"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_Supplier_VHType/SupplierAccountGroup"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="SD_MCC_SO_MASS_UPDATE_SRV.I_Supplier_VHType/IsBusinessPurposeCompleted"><Annotation Term="UI.HiddenFilter"/><Annotation Term="UI.Hidden"/></Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

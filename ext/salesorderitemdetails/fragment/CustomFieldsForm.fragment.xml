@@ -1,0 +1,18 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield">
+	<smartForm:SmartForm editable="true" entityType="SlsDocReqType">
+		<smartForm:layout>
+			<smartForm:Layout singleGroupFullSize="true" labelSpanXL="2" labelSpanL="2" labelSpanM="2" emptySpanXL="1" emptySpanL="1"/>
+		</smartForm:layout>
+		<smartForm:Group id="itemCustomFieldGroupId">
+			<!--groupElements="{path : 'dataModel>/extensionData', factory : '._addExtensionData'}"-->
+			<!--<smartForm:GroupElement label="{i18n>pricingDate}" useHorizontalLayout="true" binding="{stateModel>/date/pricingDate}"-->
+			<!--	id="customFieldGroupelement"></smartForm:GroupElement>-->
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

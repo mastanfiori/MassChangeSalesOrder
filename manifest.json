@@ -1,0 +1,290 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "cus.sd.so.mccs1",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "9.0.4"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"tags": {
+			"keywords": []
+		},
+		"ach": "SD-SLS-MCC",
+		"resources": "resources.json",
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/SD_MCC_SO_MASS_UPDATE_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"SD_MCC_SO_MASS_UPDATE_ANNO_MDL"
+					],
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"SD_MCC_SO_MASS_UPDATE_ANNO_MDL": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='SD_MCC_SO_MASS_UPDATE_ANNO_MDL',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/SD_MCC_SO_MASS_UPDATE_ANNO_MDL.xml"
+				}
+			}
+		},
+		"offline": false,
+		"sourceTemplate": {
+			"id": "ui5template.smartTemplate",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_fiori_3"
+		]
+	},
+	"sap.ui5": {
+		"resources": {
+			"js": [],
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"services": {
+			"ShellUIService": {
+				"factoryName": "sap.ushell.ui5service.ShellUIService"
+			}
+		},
+		"dependencies": {
+			"minUI5Version": "1.90.2",
+			"libs": {
+				"sap.ui.generic.app": {},
+				"sap.ui.core": {},
+				"sap.m": {
+					"lazy": false
+				},
+				"sap.ui.comp": {
+					"lazy": false
+				},
+				"sap.uxap": {
+					"lazy": false
+				},
+				"sap.suite.ui.generic.template": {},
+				"sap.ui.layout": {
+					"lazy": false
+				},
+				"sap.collaboration": {
+					"lazy": false
+				},
+				"sap.ui.table": {
+					"lazy": false
+				},
+				"sap.ui.unified": {
+					"lazy": false
+				},
+				"cus.sd.libmccs1": {
+					"lazy": false
+				},
+				"sap.ui.fl": {}
+			},
+			"components": {}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ListReport|SlsOrdItem": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ListReport/SlsOrdItem/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|SlsOrdItem": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/SlsOrdItem/i18n.properties"
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": false,
+					"metadataUrlParams": {
+						"sap-value-list": "none"
+					}
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"controllerName": "cus.sd.so.mccs1.ext.controller.ListReportExt",
+						"sap.ui.generic.app": {
+							"SlsOrdItem": {
+								"EntitySet": "SlsOrdItem",
+								"Actions": {
+									"ActionSlsOrdItem1": {
+										"id": "ActionSlsOrdItem1button",
+										"text": "{@i18n>ActionSlsOrdItem1}",
+										"press": "onActionChange",
+										"requiresSelection": true
+									},
+									"CheckSlsOrdItem": {
+										"id": "CheckSlsOrdItem1button",
+										"text": "{@i18n>CheckSlsOrdItem1}",
+										"press": "onActionCheck",
+										"requiresSelection": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"sap.ui.viewExtensions": {
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"ResponsiveTableCellsExtension|SlsOrdItem|_tab1": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cus.sd.so.mccs1.ext.fragment.AdditionalPartnerCellLinkSO",
+							"type": "XML"
+						},
+						"ResponsiveTableColumnsExtension|SlsOrdItem|_tab1": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cus.sd.so.mccs1.ext.fragment.AdditionalPartnerColumnSO",
+							"type": "XML"
+						},
+						"ResponsiveTableCellsExtension|SlsOrdItem|_tab2": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cus.sd.so.mccs1.ext.fragment.AdditionalPartnerCellLinkSOItems",
+							"type": "XML"
+						},
+						"ResponsiveTableColumnsExtension|SlsOrdItem|_tab2": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cus.sd.so.mccs1.ext.fragment.AdditionalPartnerColumnSOItems",
+							"type": "XML"
+						}
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ui.generic.app": {
+		"_version": "1.3.0",
+		"settings": {
+			"objectPageHeaderType": "Dynamic",
+			"showDraftToggle": false
+		},
+		"pages": {
+			"ListReport|SlsOrdItem": {
+				"entitySet": "SlsOrdItem",
+				"component": {
+					"name": "sap.suite.ui.generic.template.ListReport",
+					"list": true,
+					"settings": {
+						"filterSettings": {
+							"dateSettings": {
+								"useDateRange": true
+							}
+						},
+						"tableSettings": {
+							"multiSelect": true,
+							"type": "ResponsiveTable"
+						},
+						"smartVariantManagement": true,
+						"condensedTableLayout": true,
+						"enableTableFilterInPageVariant": false,
+						"quickVariantSelectionX": {
+							"showCounts": true,
+							"variants": {
+								"0": {
+									"key": "_tab1",
+									"entitySet": "SlsOrder",
+									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#SalesOrder"
+								},
+								"1": {
+									"key": "_tab2",
+									"entitySet": "SlsOrdItem",
+									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#SalesOrderItem"
+								}
+							}
+						}
+					}
+				},
+				"pages": {
+					"CanvasPage|SlsOrdItem": {
+						"component": {
+							"name": "sap.suite.ui.generic.template.Canvas",
+							"settings": {
+								"requiredControls": {
+									"footerBar": false
+								}
+							}
+						},
+						"implementingComponent": {
+							"componentName": "cus.sd.so.mccs1.ext.salesorderitemdetails",
+							"settings": {}
+						},
+						"routingSpec": {
+							"noOData": true,
+							"noKey": true,
+							"routeName": "navigateToItemObjectPage"
+						}
+					},
+					"CanvasPageHeader|SlsOrdItem": {
+						"component": {
+							"name": "sap.suite.ui.generic.template.Canvas",
+							"settings": {
+								"requiredControls": {
+									"footerBar": false
+								}
+							}
+						},
+						"implementingComponent": {
+							"componentName": "cus.sd.so.mccs1.ext.salesorderdetails",
+							"settings": {}
+						},
+						"routingSpec": {
+							"noOData": true,
+							"noKey": true,
+							"routeName": "navigateToHeaderObjectPage"
+						}
+					}
+				}
+			}
+		}
+	},
+	"sap.fiori": {
+		"registrationIds": [
+			"F5211"
+		],
+		"archeType": "transactional"
+	},
+	"sap.platform.hcp": {
+		"uri": ""
+	}
+}

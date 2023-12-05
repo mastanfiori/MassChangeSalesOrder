@@ -1,0 +1,104 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"ach": "SD-SLS-MCC",
+		"id": "cus.sd.so.mccs1.ext.salesorderdetails",
+		"type": "component",
+		"i18n": "i18n/i18n.properties",
+		"embeddedBy": "../",
+		"title": "{{compTitle}}",
+		"description": "{{compDescription}}",
+		"resources": "resources.json",
+
+		"dataSources": {}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+
+	"sap.ui5": {
+		"componentName": "cus.sd.so.mccs1.ext.salesorderdetails",
+		"services": {
+			"ShellUIService": {
+				"factoryName": "sap.ushell.ui5service.ShellUIService"
+			}
+		},
+		"rootView": {
+			"viewName": "cus.sd.so.mccs1.ext.salesorderdetails.view.App",
+			"type": "XML",
+			"async": false
+		},
+		"resources": {
+			"css": [{
+				"uri": "cus.sd.so.mccs1/ext/css/style.css"
+			}]
+		},
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			},
+			"components": {}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"handleValidation": true,
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "cus.sd.so.mccs1.ext.salesorderdetails.view",
+				"controlAggregation": "pages",
+				"controlId": "soHeaderApp",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "salesorderdetails",
+				"pattern": "",
+				"target": "salesOrderDetails"
+			}],
+			"targets": {
+				"salesOrderDetails": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "SalesOrderDetailsID",
+					"viewName": "SalesOrderDetails"
+				}
+			}
+		}
+	},
+	"sap.fiori": {
+		"registrationIds": [
+			"F5211"
+		],
+		"archeType": "transactional"
+	}
+}
